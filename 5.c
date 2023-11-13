@@ -1,22 +1,15 @@
 #define _CRT_SECURE_NO_WARNINGS
-
-// includes
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-// defines
 #define MAX_LENGTH 50
 
-// structure
 struct _stackElement;
 typedef struct _stackElement* Position;
 typedef struct _stackElement {
 	double number;
 	Position next;
 } StackElement;
-
-// function prototypes
 int calculatePostfixFromFile(Position head, char* fileName, double* result);
 int readFile(char* fileName, char* buffer);
 int parseStringIntoPostfix(Position head, char* buffer, double* result);
@@ -24,7 +17,7 @@ int checkStackAndExtractResult(Position head, double* result);
 Position createStackElement(double number);
 int popAndPerformOperation(Position head, char* operation, double* result);
 
-// main
+
 int main() {
 
 	StackElement head = { .number = 0, .next = NULL };
